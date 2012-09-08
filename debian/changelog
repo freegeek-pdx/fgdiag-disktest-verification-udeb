@@ -1,0 +1,5 @@
+fgdiag-disktest-verification-udeb (1) freegeek-test; urgency=low
+
+  * Initial release
+
+ -- Ryan Niebur <ryan@debian.org>  Fri, 07 Sep 2012 17:58:36 -0700
