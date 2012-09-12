@@ -1,5 +1,0 @@
-fgdiag-disktest-verification-udeb (1-1) unstable; urgency=low
-
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
-
- -- Ryan Niebur <ryan@debian.org>  Fri, 07 Sep 2012 17:58:36 -0700
