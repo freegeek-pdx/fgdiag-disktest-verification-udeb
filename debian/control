@@ -11,7 +11,7 @@ Package: fgdiag-disktest-verification-udeb
 XC-Package-Type: udeb
 XB-Installer-Menu-Item: 4000
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, lshw-udeb
 Description: Free Geek Diagnostics Verification
  This udeb runs as part of the installation process to verify that the
  installed hard drive has been wiped successfully.
