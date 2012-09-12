@@ -1,0 +1,76 @@
+diff -u lshw-02.16/debian/control lshw-02.16/debian/control
+--- lshw-02.16/debian/control
++++ lshw-02.16/debian/control
+@@ -1,14 +1,15 @@
+ Source: lshw
+-Section: utils
++Section: ubuntu/utils
+ Priority: optional
+ Maintainer: Ghe Rivero <ghe@debian.org>
+ Build-Depends: debhelper (>> 6.0.0), libgtk2.0-dev, quilt, libsqlite3-dev
+ Standards-Version: 3.9.1
+ 
+-Package: lshw
++Package: lshw-udeb
+ Architecture: any
+ Depends: ${shlibs:Depends}, ${misc:Depends}
+ Recommends: pciutils, usbutils
++XC-Package-Type: udeb
+ Description: information about hardware configuration
+  A small tool to provide detailed information on the hardware
+  configuration of the machine. It can report exact memory
+@@ -20,13 +20,0 @@
+-
+-Package: lshw-gtk
+-Architecture: any
+-Depends: ${shlibs:Depends}, ${misc:Depends}
+-Recommends: pciutils, usbutils
+-Description: graphical information about hardware configuration
+- A small tool to provide detailed information on the hardware
+- configuration of the machine. It can report exact memory
+- configuration, firmware version, mainboard configuration, CPU version
+- and speed, cache configuration, bus speed, etc. on DMI-capable x86
+- systems, on some PowerPC machines (PowerMac G4 is known to work) and AMD64.
+- .
+- This package provides lshw-gtk (the GTK+ version)
+diff -u lshw-02.16/debian/changelog lshw-02.16/debian/changelog
+--- lshw-02.16/debian/changelog
++++ lshw-02.16/debian/changelog
+@@ -1,3 +1,10 @@
++lshw (02.16-0.1) freegeek-test; urgency=low
++
++  * Non-maintainer upload.
++  * Build the corresponding udeb
++
++ -- Ryan Niebur <ryan@debian.org>  Sun, 05 Aug 2012 22:35:14 -0700
++
+ lshw (02.16-1) unstable; urgency=low
+ 
+   * New upstream release
+diff -u lshw-02.16/debian/rules lshw-02.16/debian/rules
+--- lshw-02.16/debian/rules
++++ lshw-02.16/debian/rules
+@@ -62,15 +62,18 @@
+ 	dh_installdirs
+ 
+ 	# Add here commands to install the package into debian/lshw.
+-	$(MAKE) install DESTDIR=$(CURDIR)/debian/lshw
+-	$(MAKE) install-gui DESTDIR=$(CURDIR)/debian/lshw-gtk
++#	$(MAKE) install DESTDIR=$(CURDIR)/debian/lshw
++	$(MAKE) install DESTDIR=$(CURDIR)/debian/lshw-udeb
++#	$(MAKE) install-gui DESTDIR=$(CURDIR)/debian/lshw-gtk
+ 
+ 	# data files supplied by pciutils and usbutils
+ 	rm -rf $(CURDIR)/debian/lshw/usr/share/lshw
++	rm -rf $(CURDIR)/debian/lshw/usr/share/lshw-udeb
+ 	#pod2man --lax $(CURDIR)/debian/patches/lshw-gtk.pod > $(CURDIR)/debian/patches/lshw-gtk.1
+-	cp $(CURDIR)/debian/patches/lshw-gtk.desktop $(CURDIR)/debian/lshw-gtk/usr/share/applications/lshw-gtk.desktop
+-	cp $(CURDIR)/debian/patches/logo.xpm $(CURDIR)/debian/lshw-gtk/usr/share/pixmaps/lshw-gtk.xpm 
+-	chmod 644 $(CURDIR)/debian/lshw/usr/share/locale/fr/LC_MESSAGES/lshw.mo
++#	cp $(CURDIR)/debian/patches/lshw-gtk.desktop $(CURDIR)/debian/lshw-gtk/usr/share/applications/lshw-gtk.desktop
++#	cp $(CURDIR)/debian/patches/logo.xpm $(CURDIR)/debian/lshw-gtk/usr/share/pixmaps/lshw-gtk.xpm 
++#	chmod 644 $(CURDIR)/debian/lshw/usr/share/locale/fr/LC_MESSAGES/lshw.mo
++	chmod 644 $(CURDIR)/debian/lshw-udeb/usr/share/locale/fr/LC_MESSAGES/lshw.mo
+ 
+ # Build architecture-independent files here.
+ binary-indep: build install
