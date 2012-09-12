@@ -4,9 +4,8 @@ Priority: extra
 Maintainer: Ryan Niebur <ryan@debian.org>
 Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.8.4
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://git.debian.org/collab-maint/fgdiag-disktest-verification-udeb.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/fgdiag-disktest-verification-udeb.git;a=summary
+Vcs-Git: git://git.freegeek.org/git/fgdiag-disktest-verification-udeb
+Vcs-Browser: http://git.freegeek.org/?p=fgdiag-disktest-verification-udeb;a=summary
 
 Package: fgdiag-disktest-verification-udeb
 Architecture: any
