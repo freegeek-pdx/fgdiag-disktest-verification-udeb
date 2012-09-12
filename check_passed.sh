@@ -7,7 +7,11 @@ DRIVES="$@"
 STATUS=0
 
 if [ -z "$DRIVES" ]; then
-    echo "Error: No drive logicalnames specified (ex: $0 sda sdb sdc)"
+    DRIVES="$(grep 0 /sys/block/*/removable | cut -d / -f 4 | grep -vE '^(loop|md)')"
+fi
+
+if [ -z "$DRIVES" ]; then
+    echo "Error: No drive logicalnames specified and none found (ex: $0 sda sdb sdc)."
     exit 2
 fi
 
@@ -18,14 +22,14 @@ for DRIVE in $DRIVES; do
     FIND="<logicalname>/dev/${DRIVE}</logicalname>"
     if grep "$FIND" $TMPFILE | grep -q '<serial>'; then
         SERIAL=$(grep "$FIND" $TMPFILE | sed -r 's,^.*<serial>([^<]+)</serial>.*$,\1,')
-#        echo "Debug: Checking drive $DRIVE with serial $SERIAL"
+#        echo "Debug: Checking drive $DRIVE with serial ${SERIAL}."
         if [ "$(wget -q -O - "http://${DATABASE}/disktest_runs/check_passed/${SERIAL}")" != "true" ]; then
-            echo "Error: No PASSED disktest run found for $DRIVE with serial $SERIAL"
+            echo "Error: No PASSED disktest run found for $DRIVE with serial ${SERIAL}."
             STATUS=1
         fi
     else
 	SERIAL="Unknown Serial"
-        echo "Warning: Could not determine serial number for drive $DRIVE"
+        echo "Warning: Could not determine serial number for drive ${DRIVE}."
     fi
 done
 
