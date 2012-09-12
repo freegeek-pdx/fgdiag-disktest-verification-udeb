@@ -1,0 +1,12 @@
+Template: fgdiag-disktest-verification-udeb/drive_not_wiped
+Type: boolean
+Default: false
+Description: Install to UNWIPED hard drive?
+ The installer detected that the database does not have a record of
+ the hard drive in this machine being successfully wiped.
+ .
+ ${OUTPUT}
+ .
+ This may mean the drive made it here by mistake and should have the
+ data contained on it destroyed. Only continue with installation if
+ you are sure you know what you are doing.

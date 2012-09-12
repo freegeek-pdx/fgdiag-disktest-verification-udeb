@@ -1,0 +1,23 @@
+#! /bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+F=`tempfile`
+fgdiag-disktest-verification > $F
+RETV=$?
+
+if [ "$RETV" != "0" ]; then
+  db_subst fgdiag-disktest-verification-udeb/drive_not_wiped OUTPUT "$(cat $F)"
+  db_input critical fgdiag-disktest-verification-udeb/drive_not_wiped || [ $? -eq 30 ]
+  db_go || exit 10
+  db_get fgdiag-disktest-verification-udeb/drive_not_wiped
+  if [ "$RET" != true ]; then
+    rm -f $F
+    exit 10
+  fi
+fi
+
+rm -f $F
+exit 0
