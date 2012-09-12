@@ -8,7 +8,9 @@ Vcs-Git: git://git.freegeek.org/git/fgdiag-disktest-verification-udeb
 Vcs-Browser: http://git.freegeek.org/?p=fgdiag-disktest-verification-udeb;a=summary
 
 Package: fgdiag-disktest-verification-udeb
+XC-Package-Type: udeb
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Free Geek Diagnostics Verification
+ This udeb runs as part of the installation process to verify that the
+ installed hard drive has been wiped successfully.
