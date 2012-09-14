@@ -4,7 +4,7 @@ set -e
 
 . /usr/share/debconf/confmodule
 
-F=`tempfile`
+F=`mktemp`
 RETV=0
 fgdiag-disktest-verification > $F || RETV=$?
 

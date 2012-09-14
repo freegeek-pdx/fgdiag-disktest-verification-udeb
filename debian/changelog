@@ -1,3 +1,9 @@
+fgdiag-disktest-verification-udeb (1.1) freegeek-test; urgency=low
+
+  * Use mktemp instead of tempfile in d-i environment
+
+ -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 11:38:19 -0700
+
 fgdiag-disktest-verification-udeb (1.0) freegeek-test; urgency=low
 
   * Initial release
