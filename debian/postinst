@@ -16,7 +16,9 @@ if [ "$RETV" != "0" ]; then
   db_get fgdiag-disktest-verification-udeb/drive_not_wiped
   if [ "$RET" != true ]; then
     rm -f $F
-    exit 10
+    shutdown
+# Main menu:
+#    exit 10
   fi
 fi
 
