@@ -1,3 +1,9 @@
+fgdiag-disktest-verification-udeb (1.4) freegeek-test; urgency=low
+
+  * Add shutdown to the postinst if the drive failed
+
+ -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 14:15:58 -0700
+
 fgdiag-disktest-verification-udeb (1.3) freegeek-test; urgency=low
 
   * Actually set the title using db_settitle (I'm learning debconf
@@ -6,7 +12,7 @@ fgdiag-disktest-verification-udeb (1.3) freegeek-test; urgency=low
   * fgdiag-disktest-verification: Use list-devices, a d-i command, when
     available
 
- -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 13:42:33 -0700
+ -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 14:15:31 -0700
 
 fgdiag-disktest-verification-udeb (1.2) freegeek-test; urgency=low
 
