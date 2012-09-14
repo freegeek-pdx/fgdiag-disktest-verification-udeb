@@ -1,3 +1,10 @@
+fgdiag-disktest-verification-udeb (1.3) UNRELEASED; urgency=low
+
+  * Actually set the title using db_settitle (I'm learning debconf
+    here..)
+
+ -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 12:27:05 -0700
+
 fgdiag-disktest-verification-udeb (1.2) freegeek-test; urgency=low
 
   * Ignore ram* drive names

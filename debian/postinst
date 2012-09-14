@@ -9,6 +9,7 @@ RETV=0
 fgdiag-disktest-verification > $F || RETV=$?
 
 if [ "$RETV" != "0" ]; then
+  db_settitle debian-installer/fgdiag-disktest-verification-udeb/title
   db_subst fgdiag-disktest-verification-udeb/drive_not_wiped OUTPUT "$(cat $F)"
   db_input critical fgdiag-disktest-verification-udeb/drive_not_wiped || [ $? -eq 30 ]
   db_go || exit 10
