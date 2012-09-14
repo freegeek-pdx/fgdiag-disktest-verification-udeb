@@ -5,8 +5,8 @@ set -e
 . /usr/share/debconf/confmodule
 
 F=`tempfile`
-fgdiag-disktest-verification > $F
-RETV=$?
+RETV=0
+fgdiag-disktest-verification > $F || RETV=$?
 
 if [ "$RETV" != "0" ]; then
   db_subst fgdiag-disktest-verification-udeb/drive_not_wiped OUTPUT "$(cat $F)"
