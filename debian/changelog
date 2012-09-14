@@ -1,3 +1,9 @@
+fgdiag-disktest-verification-udeb (1.2) freegeek-test; urgency=low
+
+  * Ignore ram* drive names
+
+ -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 12:02:31 -0700
+
 fgdiag-disktest-verification-udeb (1.1) freegeek-test; urgency=low
 
   * Use mktemp instead of tempfile in d-i environment

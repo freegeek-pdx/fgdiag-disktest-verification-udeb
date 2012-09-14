@@ -7,7 +7,7 @@ DRIVES="$@"
 STATUS=0
 
 if [ -z "$DRIVES" ]; then
-    DRIVES="$(grep 0 /sys/block/*/removable | cut -d / -f 4 | grep -vE '^(loop|md)')"
+    DRIVES="$(grep 0 /sys/block/*/removable | cut -d / -f 4 | grep -vE '^(loop|md|ram)')"
 fi
 
 if [ -z "$DRIVES" ]; then
