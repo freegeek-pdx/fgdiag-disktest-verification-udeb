@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 DATABASE=data
 DRIVES="$@"
 STATUS=0
@@ -9,6 +7,8 @@ STATUS=0
 if [ -z "$DRIVES" ]; then
     DRIVES="$(grep 0 /sys/block/*/removable | cut -d / -f 4 | grep -vE '^(loop|md|ram)')"
 fi
+
+set -e
 
 if [ -z "$DRIVES" ]; then
     echo "Error: No drive logicalnames specified and none found (ex: $0 sda sdb sdc)."
