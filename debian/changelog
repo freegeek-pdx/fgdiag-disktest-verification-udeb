@@ -1,6 +1,7 @@
 fgdiag-disktest-verification-udeb (1.2) freegeek-test; urgency=low
 
   * Ignore ram* drive names
+  * Add a title to the debconf templates
 
  -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 12:02:31 -0700
 
