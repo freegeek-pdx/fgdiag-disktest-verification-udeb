@@ -1,10 +1,10 @@
-fgdiag-disktest-verification-udeb (1.5) UNRELEASED; urgency=low
+fgdiag-disktest-verification-udeb (1.5) freegeek-test; urgency=low
 
   * Improve text displayed to user, including instructions for Prebuild
   * Preparing for first release to be actually rolled out (Closes:
     #29547)
 
- -- Ryan Niebur <ryan@debian.org>  Fri, 14 Sep 2012 17:14:54 -0700
+ -- Ryan Niebur <ryan@debian.org>  Sat, 15 Sep 2012 10:31:42 -0700
 
 fgdiag-disktest-verification-udeb (1.4) freegeek-test; urgency=low
 
