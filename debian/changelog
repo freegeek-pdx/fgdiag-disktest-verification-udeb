@@ -1,4 +1,4 @@
-fgdiag-disktest-verification-udeb (1.6) UNRELEASED; urgency=low
+fgdiag-disktest-verification-udeb (1.6) freegeek-test; urgency=low
 
   * Update the lshw-udeb to build on amd64 too
   * Replace usage of "which" with "test -x" for d-i's list-devices
