@@ -10,7 +10,7 @@ Vcs-Browser: http://git.freegeek.org/?p=fgdiag-disktest-verification-udeb;a=summ
 Package: fgdiag-disktest-verification-udeb
 XC-Package-Type: udeb
 XB-Installer-Menu-Item: 4000
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, lshw-udeb
 Description: Free Geek Diagnostics Verification
  This udeb runs as part of the installation process to verify that the
