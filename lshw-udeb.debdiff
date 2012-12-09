@@ -37,10 +37,10 @@ diff -u lshw-02.16/debian/changelog lshw-02.16/debian/changelog
 --- lshw-02.16/debian/changelog
 +++ lshw-02.16/debian/changelog
 @@ -1,3 +1,10 @@
-+lshw (02.16-0.2) freegeek-test; urgency=low
++lshw (02.16-0.3) freegeek-test; urgency=low
 +
 +  * Non-maintainer upload.
-+  * Build the corresponding udeb
++  * Build the corresponding udeb for amd64 as well as i386
 +
 + -- Ryan Niebur <ryan@debian.org>  Sun, 05 Aug 2012 22:35:14 -0700
 +
