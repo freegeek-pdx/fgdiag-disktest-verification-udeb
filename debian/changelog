@@ -1,6 +1,7 @@
 fgdiag-disktest-verification-udeb (1.6) UNRELEASED; urgency=low
 
   * Update the lshw-udeb to build on amd64 too
+  * Replace usage of "which" with "test -x" for d-i's list-devices
 
  -- Ryan Niebur <ryan@debian.org>  Sun, 09 Dec 2012 15:13:12 -0800
 
