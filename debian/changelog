@@ -1,8 +1,9 @@
-fgdiag-disktest-verification-udeb (1.7) UNRELEASED; urgency=low
+fgdiag-disktest-verification-udeb (1.7) freegeek-test; urgency=low
 
+  [ Vagrant Cascadian ]
   * Fix suggestion of where to take unwiped drives (Closes: #33900).
 
- -- Vagrant Cascadian <vagrant@debian.org>  Wed, 20 Feb 2013 17:12:58 -0800
+ -- Ryan Niebur <ryan@debian.org>  Sat, 23 Feb 2013 18:12:22 -0800
 
 fgdiag-disktest-verification-udeb (1.6) freegeek-test; urgency=low
 
